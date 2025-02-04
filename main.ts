@@ -22,6 +22,6 @@ Deno.serve(async (_req) => {
   // Wait for the promise to resolve before returning the response
   const content = await source;
   return new Response(content, {
-    headers: { "Content-Type": "text/plain" }
+    headers: { "Content-Type": "text/html" }
   });
 });
