@@ -5,37 +5,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setting up a Node.js Project</title>
+  <!-- Include html2pdf.js library from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     /* Global Box Sizing */
     * {
       box-sizing: border-box;
     }
+    
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       margin: 0;
       padding: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+    
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #222;
+      color: #ddd;
+    }
+    
+    h1,
+    h2,
+    p,
+    ul,
+    pre,
+    code {
+      transition: color 0.3s ease;
+    }
+    
+    body.dark-mode h1,
+    body.dark-mode h2 {
+      color: #eee;
+    }
+    
+    body.dark-mode pre {
+      background-color: #333;
+    }
+    
     h1 {
       text-align: center;
       color: #2c3e50;
     }
+    
     h2 {
       color: #34495e;
       font-size: 24px;
       margin-top: 30px;
     }
+    
     p {
       font-size: 16px;
       line-height: 1.5;
     }
+    
     ul {
       list-style-type: none;
       padding-left: 0;
     }
+    
     ul li {
       margin-bottom: 10px;
     }
+    
     pre {
       background-color: #ecf0f1;
       padding: 15px;
@@ -46,16 +80,21 @@
       white-space: pre-wrap;
       word-wrap: break-word;
       position: relative;
+      /* Avoid breaking code blocks across pages */
+      page-break-inside: avoid;
     }
+    
     code {
       font-family: Consolas, "Courier New", monospace;
       font-size: 16px;
       color: #e74c3c;
     }
+    
     .command-container {
       position: relative;
       margin-bottom: 20px;
     }
+    
     .copy-btn {
       position: absolute;
       top: 10px;
@@ -67,14 +106,38 @@
       cursor: pointer;
       border-radius: 3px;
       font-size: 14px;
+      transition: background-color 0.3s ease;
     }
+    
     .copy-btn:hover {
       background-color: #3498db;
     }
+    
+    .download-btn {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+      display: block;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background-color: #2ecc71;
+    }
+    
     .heading-container {
       text-align: center;
       margin-bottom: 30px;
     }
+    
     .content {
       max-width: 900px;
       margin: 0 auto;
@@ -83,6 +146,12 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    
+    body.dark-mode .content {
+      background-color: #333;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    
     .project-structure {
       background-color: #2c3e50;
       color: white;
@@ -92,14 +161,63 @@
       font-size: 16px;
       line-height: 1.6;
       overflow-x: auto;
+      /* Avoid breaking folder structure across pages */
+      page-break-inside: avoid;
     }
+    
     a {
       color: #2980b9;
       text-decoration: none;
     }
+    
     a:hover {
       text-decoration: underline;
     }
+    
+    /* Top Bar for Academy Logo and Dark/Light Mode Buttons */
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .academy-logo img {
+      max-width: 150px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .academy-logo:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .academy-text {
+      font-size: 18px;
+      color: #34495e;
+      margin-top: 10px;
+    }
+    
+    .mode-buttons {
+      margin-top: 15px;
+    }
+    
+    .mode-buttons button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 14px;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .mode-buttons button:hover {
+      background-color: #3498db;
+    }
+    
     @media only screen and (max-width: 600px) {
       body {
         padding: 10px;
@@ -122,7 +240,20 @@
 </head>
 
 <body>
-  <div class="content">
+  <!-- Top Bar: Academy Logo & Dark/Light Mode Buttons -->
+  <div class="top-bar">
+    <a href="https://ibb.co/HDWh8CDj" target="_blank" class="academy-logo">
+      <!-- Add crossOrigin attribute to help with PDF rendering -->
+      <img src="https://i.ibb.co/27DZ4S7T/IMG-20250204-WA0000.jpg" alt="Training By JRV Academy" crossOrigin="anonymous" />
+    </a>
+    <div class="academy-text">Training By JRV Academy</div>
+    <div class="mode-buttons">
+      <button onclick="setDarkMode()">Dark 🌙</button>
+      <button onclick="setLightMode()">Light ☀</button>
+    </div>
+  </div>
+
+  <div class="content" id="pageContent">
     <!-- Heading -->
     <div class="heading-container">
       <h1>SOKA IKEDA COLLEGE OF ARTS &amp; SCIENCE FOR WOMEN</h1>
@@ -162,7 +293,7 @@
       <strong>Step B:</strong> Open your project folder in VS Code.
     </p>
     <p>
-      First, navigate to your project directory (eg: cd soka) in the Command Prompt. After you create the project directory (see next section i.e. 4), type:
+      First, navigate to your project directory (e.g., <code>cd soka</code>) in the Command Prompt. After you create the project directory (see section 4), type:
     </p>
     <div class="command-container">
       <pre><code>code .</code></pre>
@@ -272,7 +403,7 @@
       <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
     <p>
-      The server will automatically restart if you make changes to your code and press (ctrl + s) to save the changes.
+      The server will automatically restart if you make changes to your code and press <code>Ctrl+S</code> to save.
     </p>
 
     <!-- Section 7: Sample Code in index.js -->
@@ -306,6 +437,9 @@ app.listen(6002, () => {
       ├── package-lock.json<br />
       └── package.json
     </div>
+
+    <!-- Download as PDF Button -->
+    <!-- <button class="download-btn" onclick="downloadPDF()">Download as PDF</button> -->
   </div>
 
   <script>
@@ -320,6 +454,29 @@ app.listen(6002, () => {
       }).catch((error) => {
         alert("Failed to copy text: " + error);
       });
+    }
+
+    function downloadPDF() {
+      // Ensure the scroll is at the top so the entire content is rendered
+      window.scrollTo(0, 0);
+      const element = document.getElementById('pageContent');
+      const opt = {
+        margin: 0.5,
+        filename: 'Nodejs_Project_Setup.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, scrollY: -window.scrollY },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+
+    function setDarkMode() {
+      document.body.classList.add('dark-mode');
+    }
+
+    function setLightMode() {
+      document.body.classList.remove('dark-mode');
     }
   </script>
 </body>
