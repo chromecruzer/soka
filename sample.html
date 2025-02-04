@@ -2,67 +2,60 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Setting up Node.js Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting up a Node.js Project</title>
   <style>
     /* Global Box Sizing */
     * {
       box-sizing: border-box;
     }
-
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       margin: 0;
       padding: 20px;
     }
-
     h1 {
       text-align: center;
       color: #2c3e50;
     }
-
     h2 {
       color: #34495e;
       font-size: 24px;
+      margin-top: 30px;
     }
-
     p {
       font-size: 16px;
       line-height: 1.5;
     }
-
     ul {
       list-style-type: none;
       padding-left: 0;
     }
-
     ul li {
       margin-bottom: 10px;
     }
-
     pre {
       background-color: #ecf0f1;
       padding: 15px;
       border-radius: 5px;
       font-size: 16px;
-      margin-top: 10px;
-      position: relative;
+      margin: 10px 0;
       overflow-x: auto;
-      white-space: pre-wrap; /* Allow code to wrap */
+      white-space: pre-wrap;
       word-wrap: break-word;
+      position: relative;
     }
-
     code {
       font-family: Consolas, "Courier New", monospace;
       font-size: 16px;
+      color: #e74c3c;
     }
-
-    .code-container {
+    .command-container {
+      position: relative;
       margin-bottom: 20px;
     }
-
     .copy-btn {
       position: absolute;
       top: 10px;
@@ -75,16 +68,13 @@
       border-radius: 3px;
       font-size: 14px;
     }
-
     .copy-btn:hover {
       background-color: #3498db;
     }
-
     .heading-container {
       text-align: center;
       margin-bottom: 30px;
     }
-
     .content {
       max-width: 900px;
       margin: 0 auto;
@@ -93,29 +83,36 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-
+    .project-structure {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
     a {
       color: #2980b9;
+      text-decoration: none;
     }
-
-    /* Mobile-specific adjustments */
+    a:hover {
+      text-decoration: underline;
+    }
     @media only screen and (max-width: 600px) {
       body {
         padding: 10px;
       }
-
       .content {
         padding: 15px;
       }
-
       h2 {
         font-size: 20px;
       }
-
       pre {
         font-size: 14px;
       }
-
       .copy-btn {
         font-size: 12px;
         padding: 3px 7px;
@@ -126,100 +123,203 @@
 
 <body>
   <div class="content">
+    <!-- Heading -->
     <div class="heading-container">
       <h1>SOKA IKEDA COLLEGE OF ARTS &amp; SCIENCE FOR WOMEN</h1>
-      <h2>(Node.js) Training Docs</h2>
+      <h2>(Node.js) Training Documentation</h2>
     </div>
 
-    <h2>1. Make sure you have the following software installed:</h2>
-    <ul>
-      <li>Node.js version 20 LTS preferred (<a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a>)</li>
-      <li>Git (<a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>)</li>
-      <li>VSCode (<a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>)</li>
-    </ul>
-
-    <h2>2. After successful installation, check their availability:</h2>
+    <!-- Section 1: Software Installation -->
+    <h2>1. Required Software Installation</h2>
+    <p>
+      Make sure you have the following software installed on your computer:
+    </p>
     <ul>
       <li>
-        <pre><code>node --version</code></pre>
+        <strong>Node.js</strong> (Preferred version: 20 LTS) – <a href="https://nodejs.org/en/download" target="_blank">Download Node.js</a>
       </li>
       <li>
-        <pre><code>npm --version</code></pre>
+        <strong>Git</strong> – <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>
       </li>
       <li>
-        <pre><code>code --version</code></pre>
-      </li>
-      <li>
-        <pre><code>git --version</code></pre>
+        <strong>Visual Studio Code (VS Code)</strong> – <a href="https://code.visualstudio.com/" target="_blank">Download VS Code</a>
       </li>
     </ul>
 
-    <h2>3. To initialize a Node.js project:</h2>
-    <ul>
-      <li>Create a directory.</li>
-      <li>Enter into the directory and type
-        <pre><code>npm init -y</code></pre> in the command terminal.
-      </li>
-      <li>Create a file named
-        <pre><code>index.js</code></pre> inside the directory.
-      </li>
-      <li>Inside the command terminal, let's install the Express library. Type
-        <pre><code>npm install express</code></pre>.
-      </li>
-      <li>To rerun the project using Node.js, install
-        <pre><code>nodemon</code></pre> globally. Inside the command terminal, type
-        <pre><code>npm install nodemon --global</code></pre>.
-      </li>
-      <li>After installing <code>nodemon</code>, check its availability by typing
-        <pre><code>npm list --g --depth 0</code></pre> in the terminal.
-      </li>
-    </ul>
+    <!-- Section 2: Opening CMD and VS Code -->
+    <h2>2. Opening the Command Prompt and VS Code</h2>
+    <p>
+      <strong>Step A:</strong> To open the Windows Command Prompt:
+    </p>
+    <p>
+      Click on the Start menu, type <code>cmd</code> in the search box, and press <code>Enter</code>.
+    </p>
+    <div class="command-container">
+      <pre><code>cmd</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step B:</strong> Open your project folder in VS Code.
+    </p>
+    <p>
+      First, navigate to your project directory in the Command Prompt. After you create the project directory (see next section), type:
+    </p>
+    <div class="command-container">
+      <pre><code>code .</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      This command opens the current folder in VS Code. If it doesn’t work, ensure that the <code>code</code> command is installed in your PATH. You can install it from VS Code by pressing <code>Ctrl+Shift+P</code> and typing <em>Shell Command: Install 'code' command in PATH</em>.
+    </p>
+    <p>
+      <strong>Note:</strong> When you open the terminal in VS Code by pressing <code>Ctrl+Shift+`</code>, check that the terminal is using the Command Prompt (CMD) and not PowerShell. If it opens as PowerShell, type <code>cmd</code> and press <code>Enter</code> to switch.
+    </p>
 
-    <h2>4. Modify package.json for ES6 Modules:</h2>
-    <p>Since we're using ES6-based code, you need to update your <code>package.json</code> file by adding the
-      following line:</p>
-    <pre><code>"type": "module"</code></pre>
-    <p>This enables ES6 module syntax for import/export.</p>
+    <!-- Section 3: Verify Installation -->
+    <h2>3. Verify Software Installation</h2>
+    <p>
+      In the Command Prompt or VS Code terminal (make sure it is CMD), type the following commands to check if the installations are successful:
+    </p>
+    <div class="command-container">
+      <pre><code>node --version</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <div class="command-container">
+      <pre><code>npm --version</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <div class="command-container">
+      <pre><code>code --version</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <div class="command-container">
+      <pre><code>git --version</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
 
-    <h2>5. To run the project:</h2>
-    <p>In the VSCode terminal, type:</p>
-    <pre><code>nodemon index.js</code></pre>
-    <p>You should be able to see the output in the terminal.</p>
+    <!-- Section 4: Initialize a Node.js Project -->
+    <h2>4. Initialize a Node.js Project</h2>
+    <p>
+      Now that you have verified the installations, let’s create and set up your Node.js project.
+    </p>
+    <p>
+      <strong>Step A:</strong> Create a project directory. In the CMD terminal type:
+    </p>
+    <div class="command-container">
+      <pre><code>mkdir soka</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step B:</strong> Navigate into the new directory:
+    </p>
+    <div class="command-container">
+      <pre><code>cd soka</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step C:</strong> Initialize a Node.js project:
+    </p>
+    <div class="command-container">
+      <pre><code>npm init -y</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step D:</strong> Create the entry file <code>index.js</code>:
+    </p>
+    <div class="command-container">
+      <pre><code>type nul > index.js</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step E:</strong> Install Express:
+    </p>
+    <div class="command-container">
+      <pre><code>npm install express</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step F:</strong> Install Nodemon globally (this step only needs to be done once):
+    </p>
+    <div class="command-container">
+      <pre><code>npm install nodemon --global</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      <strong>Step G:</strong> Verify the Nodemon installation:
+    </p>
+    <div class="command-container">
+      <pre><code>npm list -g --depth 0</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
 
-    <h2>6. Code in <code>index.js</code>:</h2>
+    <!-- Section 5: Update package.json -->
+    <h2>5. Update <code>package.json</code> for ES6 Modules</h2>
+    <p>
+      To use ES6 module syntax (import/export), open <code>package.json</code> in VS Code and add the following line if it’s not already present:
+    </p>
+    <div class="command-container">
+      <pre><code>"type": "module"</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
 
-    <div class="code-container">
+    <!-- Section 6: Start the Server -->
+    <h2>6. Start the Server</h2>
+    <p>
+      Open the VS Code terminal using <code>Ctrl+Shift+`</code> (make sure it is the Command Prompt). Then run the following command to start your server:
+    </p>
+    <div class="command-container">
+      <pre><code>nodemon index.js</code></pre>
+      <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <p>
+      The server will automatically restart if you make changes to your code.
+    </p>
+
+    <!-- Section 7: Sample Code in index.js -->
+    <h2>7. Sample Code in <code>index.js</code></h2>
+    <div class="command-container">
       <pre><code>
-import express from 'express'
-const app = express()
+import express from 'express';
+const app = express();
 
-// Handlers
-app.get('/soka/:value', (req, res)=>{
-    let value = req.params
-    console.log(req.method)
-    console.log(`From Client ${JSON.stringify(value, null, 2)}`)
-    let valueToClient = JSON.stringify(value, null, 2)
-    res.send(valueToClient)
-})
+// Route Handler
+app.get('/soka/:value', (req, res) => {
+    let value = req.params;
+    console.log(req.method);
+    console.log(`From Client ${JSON.stringify(value, null, 2)}`);
+    res.send(JSON.stringify(value, null, 2));
+});
 
-app.listen(6002, ()=>{
-    console.log(`server is listening to port 6002`)
-})
+app.listen(6002, () => {
+    console.log('Server is listening on port 6002');
+});
       </code></pre>
-      <button class="copy-btn" onclick="copyCode(event)">Copy Code</button>
+      <button class="copy-btn" onclick="copyText(this)">Copy Code</button>
     </div>
 
+    <!-- Section 8: Project Folder Structure -->
+    <h2>8. Project Folder Structure</h2>
+    <div class="project-structure">
+      soka/<br />
+      ├── index.js<br />
+      ├── node_modules/<br />
+      ├── package-lock.json<br />
+      └── package.json
+    </div>
   </div>
 
   <script>
-    function copyCode(event) {
-      const codeElement = event.target.previousElementSibling.querySelector('code');
-      const range = document.createRange();
-      range.selectNode(codeElement);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      alert('Code copied to clipboard!');
+    function copyText(button) {
+      const codeElement = button.previousElementSibling;
+      const textToCopy = codeElement.innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        button.innerText = "Copied!";
+        setTimeout(() => {
+          button.innerText = "Copy";
+        }, 1500);
+      }).catch((error) => {
+        alert("Failed to copy text: " + error);
+      });
     }
   </script>
 </body>
