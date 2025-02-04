@@ -11,7 +11,7 @@
 /// Soka CLG
 
 // Fetching the data asynchronously
-const source = fetch("https://raw.githubusercontent.com/chromecruzer/backups/refs/heads/master/Final%20Blaze.txt")
+const source = fetch(Deno.env.get('REPO_URL'))
   .then((data) => data.text())
   .catch((err) => {
     console.log(`failed to fetch ${err}`);
