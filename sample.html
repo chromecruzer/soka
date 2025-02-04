@@ -2,164 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting up Node.js Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting up Node.js Project</title>
+  <style>
+    /* Global Box Sizing */
+    * {
+      box-sizing: border-box;
+    }
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
 
-        h2 {
-            color: #34495e;
-            font-size: 24px;
-        }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
 
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
+    h2 {
+      color: #34495e;
+      font-size: 24px;
+    }
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
 
-        ul li {
-            margin-bottom: 10px;
-        }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
 
-        pre {
-            background-color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            position: relative;
-        }
+    ul li {
+      margin-bottom: 10px;
+    }
 
-        code {
-            font-family: Consolas, "Courier New", monospace;
-            font-size: 16px;
-        }
+    pre {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 10px;
+      position: relative;
+      overflow-x: auto;
+      white-space: pre-wrap; /* Allow code to wrap */
+      word-wrap: break-word;
+    }
 
-        .code-container {
-            margin-bottom: 20px;
-        }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 16px;
+    }
 
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-size: 14px;
-        }
+    .code-container {
+      margin-bottom: 20px;
+    }
 
-        .copy-btn:hover {
-            background-color: #3498db;
-        }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 14px;
+    }
 
-        .heading-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .copy-btn:hover {
+      background-color: #3498db;
+    }
 
-        .content {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .heading-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        a {
-            color: #2980b9;
-        }
-    </style>
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      color: #2980b9;
+    }
+
+    /* Mobile-specific adjustments */
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      pre {
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        font-size: 12px;
+        padding: 3px 7px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="content">
-        <div class="heading-container">
-            <h1>SOKA IKEDA COLLEGE OF ARTS & SCIENCE FOR WOMEN</h1>
-            <h2>(Node.js) Training Docs</h2>
-        </div>
+  <div class="content">
+    <div class="heading-container">
+      <h1>SOKA IKEDA COLLEGE OF ARTS &amp; SCIENCE FOR WOMEN</h1>
+      <h2>(Node.js) Training Docs</h2>
+    </div>
 
-        <h2>1. Make sure you have the following software installed:</h2>
-        <ul>
-            <li>Node.js version 20 LTS preferred (<a href="https://nodejs.org/en/download"
-                    target="_blank">https://nodejs.org/en/download</a>)</li>
-            <li>Git (<a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>)</li>
-            <li>VSCode (<a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>)
-            </li>
-        </ul>
+    <h2>1. Make sure you have the following software installed:</h2>
+    <ul>
+      <li>Node.js version 20 LTS preferred (<a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a>)</li>
+      <li>Git (<a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>)</li>
+      <li>VSCode (<a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>)</li>
+    </ul>
 
-        <h2>2. After successful installation, check their availability:</h2>
-        <ul>
-            <li>
-                <pre><code>node --version</code></pre>
-            </li>
-            <li>
-                <pre><code>npm --version</code></pre>
-            </li>
-            <li>
-                <pre><code>code --version</code></pre>
-            </li>
-            <li>
-                <pre><code>git --version</code></pre>
-            </li>
-        </ul>
+    <h2>2. After successful installation, check their availability:</h2>
+    <ul>
+      <li>
+        <pre><code>node --version</code></pre>
+      </li>
+      <li>
+        <pre><code>npm --version</code></pre>
+      </li>
+      <li>
+        <pre><code>code --version</code></pre>
+      </li>
+      <li>
+        <pre><code>git --version</code></pre>
+      </li>
+    </ul>
 
-        <h2>3. To initialize a Node.js project:</h2>
-        <ul>
-            <li>Create a directory.</li>
-            <li>Enter into the directory and type
-                <pre><code>npm init -y</code></pre> in the command terminal.
-            </li>
-            <li>Create a file named
-                <pre><code>index.js</code></pre> inside the directory.
-            </li>
-            <li>Inside the command terminal, let's install the Express library. Type
-                <pre><code>npm install express</code></pre>.
-            </li>
-            <li>To rerun the project using Node.js, install
-                <pre><code>nodemon</code></pre> globally. Inside the command terminal, type
-                <pre><code>npm install nodemon --global</code></pre>.
-            </li>
-            <li>After installing `nodemon`, check its availability by typing
-                <pre><code>npm list --g --depth 0</code></pre> in the terminal.
-            </li>
-        </ul>
+    <h2>3. To initialize a Node.js project:</h2>
+    <ul>
+      <li>Create a directory.</li>
+      <li>Enter into the directory and type
+        <pre><code>npm init -y</code></pre> in the command terminal.
+      </li>
+      <li>Create a file named
+        <pre><code>index.js</code></pre> inside the directory.
+      </li>
+      <li>Inside the command terminal, let's install the Express library. Type
+        <pre><code>npm install express</code></pre>.
+      </li>
+      <li>To rerun the project using Node.js, install
+        <pre><code>nodemon</code></pre> globally. Inside the command terminal, type
+        <pre><code>npm install nodemon --global</code></pre>.
+      </li>
+      <li>After installing <code>nodemon</code>, check its availability by typing
+        <pre><code>npm list --g --depth 0</code></pre> in the terminal.
+      </li>
+    </ul>
 
-        <h2>4. Modify package.json for ES6 Modules:</h2>
-        <p>Since we're using ES6-based code, you need to update your <code>package.json</code> file by adding the
-            following line:</p>
-        <pre><code>"type": "module"</code></pre>
-        <p>This enables ES6 module syntax for import/export.</p>
+    <h2>4. Modify package.json for ES6 Modules:</h2>
+    <p>Since we're using ES6-based code, you need to update your <code>package.json</code> file by adding the
+      following line:</p>
+    <pre><code>"type": "module"</code></pre>
+    <p>This enables ES6 module syntax for import/export.</p>
 
-        <h2>5. To run the project:</h2>
-        <p>In the VSCode terminal, type:</p>
-        <pre><code>nodemon index.js</code></pre>
-        <p>You should be able to see the output in the terminal.</p>
+    <h2>5. To run the project:</h2>
+    <p>In the VSCode terminal, type:</p>
+    <pre><code>nodemon index.js</code></pre>
+    <p>You should be able to see the output in the terminal.</p>
 
-        <h2>6. Code in <code>index.js</code>:</h2>
+    <h2>6. Code in <code>index.js</code>:</h2>
 
-        <div class="code-container">
-            <pre><code>
+    <div class="code-container">
+      <pre><code>
 import express from 'express'
 const app = express()
 
@@ -175,23 +205,23 @@ app.get('/soka/:value', (req, res)=>{
 app.listen(6002, ()=>{
     console.log(`server is listening to port 6002`)
 })
-            </code></pre>
-            <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-        </div>
-
+      </code></pre>
+      <button class="copy-btn" onclick="copyCode(event)">Copy Code</button>
     </div>
 
-    <script>
-        function copyCode() {
-            const codeElement = event.target.previousElementSibling.querySelector('code');
-            const range = document.createRange();
-            range.selectNode(codeElement);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            alert('Code copied to clipboard!');
-        }
-    </script>
+  </div>
+
+  <script>
+    function copyCode(event) {
+      const codeElement = event.target.previousElementSibling.querySelector('code');
+      const range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      alert('Code copied to clipboard!');
+    }
+  </script>
 </body>
 
 </html>
