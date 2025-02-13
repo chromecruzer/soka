@@ -12,7 +12,7 @@
     * {
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -20,13 +20,13 @@
       padding: 20px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
+
     /* Dark Mode Styles */
     body.dark-mode {
       background-color: #222;
       color: #ddd;
     }
-    
+
     h1,
     h2,
     p,
@@ -35,41 +35,41 @@
     code {
       transition: color 0.3s ease;
     }
-    
+
     body.dark-mode h1,
     body.dark-mode h2 {
       color: #eee;
     }
-    
+
     body.dark-mode pre {
       background-color: #333;
     }
-    
+
     h1 {
       text-align: center;
       color: #2c3e50;
     }
-    
+
     h2 {
       color: #34495e;
       font-size: 24px;
       margin-top: 30px;
     }
-    
+
     p {
       font-size: 16px;
       line-height: 1.5;
     }
-    
+
     ul {
       list-style-type: none;
       padding-left: 0;
     }
-    
+
     ul li {
       margin-bottom: 10px;
     }
-    
+
     pre {
       background-color: #ecf0f1;
       padding: 15px;
@@ -83,18 +83,18 @@
       /* Avoid breaking code blocks across pages */
       page-break-inside: avoid;
     }
-    
+
     code {
       font-family: Consolas, "Courier New", monospace;
       font-size: 16px;
       color: #e74c3c;
     }
-    
+
     .command-container {
       position: relative;
       margin-bottom: 20px;
     }
-    
+
     .copy-btn {
       position: absolute;
       top: 10px;
@@ -108,11 +108,11 @@
       font-size: 14px;
       transition: background-color 0.3s ease;
     }
-    
+
     .copy-btn:hover {
       background-color: #3498db;
     }
-    
+
     .download-btn {
       background-color: #27ae60;
       color: white;
@@ -128,16 +128,16 @@
       margin-right: auto;
       transition: background-color 0.3s ease;
     }
-    
+
     .download-btn:hover {
       background-color: #2ecc71;
     }
-    
+
     .heading-container {
       text-align: center;
       margin-bottom: 30px;
     }
-    
+
     .content {
       max-width: 900px;
       margin: 0 auto;
@@ -146,12 +146,12 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     body.dark-mode .content {
       background-color: #333;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
-    
+
     .project-structure {
       background-color: #2c3e50;
       color: white;
@@ -164,16 +164,16 @@
       /* Avoid breaking folder structure across pages */
       page-break-inside: avoid;
     }
-    
+
     a {
       color: #2980b9;
       text-decoration: none;
     }
-    
+
     a:hover {
       text-decoration: underline;
     }
-    
+
     /* Top Bar for Academy Logo and Dark/Light Mode Buttons */
     .top-bar {
       display: flex;
@@ -181,27 +181,27 @@
       align-items: center;
       margin-bottom: 20px;
     }
-    
+
     .academy-logo img {
       max-width: 150px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .academy-logo:hover img {
       transform: scale(1.1);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    
+
     .academy-text {
       font-size: 18px;
       color: #34495e;
       margin-top: 10px;
     }
-    
+
     .mode-buttons {
       margin-top: 15px;
     }
-    
+
     .mode-buttons button {
       background-color: #2980b9;
       color: white;
@@ -213,24 +213,28 @@
       margin: 0 5px;
       transition: background-color 0.3s ease;
     }
-    
+
     .mode-buttons button:hover {
       background-color: #3498db;
     }
-    
+
     @media only screen and (max-width: 600px) {
       body {
         padding: 10px;
       }
+
       .content {
         padding: 15px;
       }
+
       h2 {
         font-size: 20px;
       }
+
       pre {
         font-size: 14px;
       }
+
       .copy-btn {
         font-size: 12px;
         padding: 3px 7px;
@@ -244,7 +248,9 @@
   <div class="top-bar">
     <a href="https://ibb.co/HDWh8CDj" target="_blank" class="academy-logo">
       <!-- Add crossOrigin attribute to help with PDF rendering -->
-      <img src="https://i.ibb.co/27DZ4S7T/IMG-20250204-WA0000.jpg" alt="Training By JRV Academy" crossOrigin="anonymous" />
+      <img src="https://i.ibb.co/27DZ4S7T/IMG-20250204-WA0000.jpg" alt="Training By JRV Academy" crossOrigin="anonymous"
+        onclick="return false;" />
+
     </a>
     <div class="academy-text">Training By JRV Academy</div>
     <div class="mode-buttons">
@@ -267,13 +273,15 @@
     </p>
     <ul>
       <li>
-        <strong>Node.js</strong> (Preferred version: 20 LTS) – <a href="https://nodejs.org/en/download" target="_blank">Download Node.js</a>
+        <strong>Node.js</strong> (Preferred version: 20 LTS) – <a href="https://nodejs.org/en/download"
+          target="_blank">Download Node.js</a>
       </li>
       <li>
         <strong>Git</strong> – <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>
       </li>
       <li>
-        <strong>Visual Studio Code (VS Code)</strong> – <a href="https://code.visualstudio.com/Download" target="_blank">Download VS Code</a>
+        <strong>Visual Studio Code (VS Code)</strong> – <a href="https://code.visualstudio.com/Download"
+          target="_blank">Download VS Code</a>
       </li>
     </ul>
 
@@ -293,23 +301,29 @@
       <strong>Step B:</strong> Open your project folder in VS Code.
     </p>
     <p>
-      First, navigate to your project directory (e.g., <code>cd soka</code>) in the Command Prompt. After you create the project directory (see section 4), type:
+      First, navigate to your project directory (e.g., <code>cd soka</code>) in the Command Prompt. After you create the
+      project directory (see section 4), type:
     </p>
     <div class="command-container">
       <pre><code>code .</code></pre>
       <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
     <p>
-      This command opens the current folder in VS Code. If it doesn’t work, ensure that the <code>code</code> command is installed in your PATH. You can install it from VS Code by pressing <code>Ctrl+Shift+P</code> and typing <em>Shell Command: Install 'code' command in PATH</em>.
+      This command opens the current folder in VS Code. If it doesn’t work, ensure that the <code>code</code> command is
+      installed in your PATH. You can install it from VS Code by pressing <code>Ctrl+Shift+P</code> and typing <em>Shell
+        Command: Install 'code' command in PATH</em>.
     </p>
     <p>
-      <strong>Note:</strong> When you open the terminal in VS Code by pressing <code>Ctrl+Shift+`</code>, check that the terminal is using the Command Prompt (CMD) and not PowerShell. If it opens as PowerShell, type <code>cmd</code> and press <code>Enter</code> to switch.
+      <strong>Note:</strong> When you open the terminal in VS Code by pressing <code>Ctrl+Shift+`</code>, check that the
+      terminal is using the Command Prompt (CMD) and not PowerShell. If it opens as PowerShell, type <code>cmd</code>
+      and press <code>Enter</code> to switch.
     </p>
 
     <!-- Section 3: Verify Installation -->
     <h2>3. Verify Software Installation</h2>
     <p>
-      In the Command Prompt or VS Code terminal (make sure it is CMD), type the following commands to check if the installations are successful:
+      In the Command Prompt or VS Code terminal (make sure it is CMD), type the following commands to check if the
+      installations are successful:
     </p>
     <div class="command-container">
       <pre><code>node --version</code></pre>
@@ -386,7 +400,8 @@
     <!-- Section 5: Update package.json -->
     <h2>5. Update <code>package.json</code> for ES6 Modules</h2>
     <p>
-      To use ES6 module syntax (import/export), open <code>package.json</code> in VS Code and add the following line if it’s not already present:
+      To use ES6 module syntax (import/export), open <code>package.json</code> in VS Code and add the following line if
+      it’s not already present:
     </p>
     <div class="command-container">
       <pre><code>"type": "module"</code></pre>
@@ -396,7 +411,8 @@
     <!-- Section 6: Start the Server -->
     <h2>6. Start the Server</h2>
     <p>
-      Open the VS Code terminal using <code>Ctrl+Shift+`</code> (make sure it is the Command Prompt). Then run the following command to start your server:
+      Open the VS Code terminal using <code>Ctrl+Shift+`</code> (make sure it is the Command Prompt). Then run the
+      following command to start your server:
     </p>
     <div class="command-container">
       <pre><code>nodemon index.js</code></pre>
@@ -437,9 +453,161 @@ app.listen(6002, () => {
       ├── package-lock.json<br />
       └── package.json
     </div>
+    <!-- Section: Express.js Setup -->
+    <h2>8. Setting up an Enterprise Express.js Project</h2>
+    <p>To initialize a fresh Express.js project, follow these steps:</p>
+    <ul>
+      <li>
+        <strong>Clone the Express repository:</strong>
+        <div class="command-container">
+          <pre><code>git clone https://github.com/chromecruzer/express</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Navigate to the Express directory:</strong>
+        <div class="command-container">
+          <pre><code>cd express</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Install dependencies:</strong>
+        <div class="command-container">
+          <pre><code>npm install</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Start the development server:</strong>
+        <div class="command-container">
+          <pre><code>npm run dev</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Build the project:</strong>
+        <div class="command-container">
+          <pre><code>npm run build</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Start the production server:</strong>
+        <div class="command-container">
+          <pre><code>npm start</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+      <li>
+        <strong>Stop the running server:</strong>
+        <div class="command-container">
+          <pre><code>ctrl + c</code></pre>
+          <button class="copy-btn" onclick="copyText(this)">Copy</button>
+        </div>
+      </li>
+    </ul>
 
-    <!-- Download as PDF Button -->
-    <!-- <button class="download-btn" onclick="downloadPDF()">Download as PDF</button> -->
+    <!-- Section: MongoDB Atlas Setup -->
+    <h2>9. Set up MongoDB Atlas</h2>
+    <p>Follow these steps to set up MongoDB Atlas and perform basic queries:</p>
+    <ul>
+      <li><strong>Step 1:</strong> Create a MongoDB Atlas account and a new cluster.</li>
+      <li><strong>Step 2:</strong> Whitelist your IP address.</li>
+      <li><strong>Step 3:</strong> Create a database and collection.</li>
+      <li><strong>Step 4:</strong> Insert data into a collection.</li>
+      <li><strong>Step 5:</strong> Perform a query to retrieve data.</li>
+      <li><strong>Step 6:</strong> Delete a collection or document.</li>
+    </ul>
+    <!-- MongoDB Commands -->
+    <h3>MongoDB Query Examples</h3>
+    <ul>
+      <li><strong>Create a new database:</strong> <code>use myDatabase</code></li>
+      <li><strong>Create a new collection:</strong> <code>db.createCollection("users")</code></li>
+      <li><strong>Insert a document:</strong> <code>db.users.insertOne({ name: "John", age: 30 })</code></li>
+      <li><strong>Insert multiple documents:</strong>
+        <code>db.users.insertMany([{ name: "Alice", age: 25 }, { name: "Bob", age: 35 }])</code>
+      </li>
+      <li><strong>Find all documents:</strong> <code>db.users.find()</code></li>
+      <li><strong>Find documents with a condition:</strong> <code>db.users.find({ age: { $gt: 30 } })</code></li>
+      <li><strong>Find a single document:</strong> <code>db.users.findOne({ name: "Alice" })</code></li>
+      <li><strong>Update a document:</strong> <code>db.users.updateOne({ name: "John" }, { $set: { age: 31 } })</code>
+      </li>
+      <li><strong>Update multiple documents:</strong>
+        <code>db.users.updateMany({ age: { $lt: 30 } }, { $set: { status: "young" } })</code>
+      </li>
+      <li><strong>Delete a document:</strong> <code>db.users.deleteOne({ name: "Bob" })</code></li>
+      <li><strong>Delete multiple documents:</strong> <code>db.users.deleteMany({ age: { $lt: 30 } })</code></li>
+      <li><strong>Drop a collection:</strong> <code>db.users.drop()</code></li>
+      <li><strong>Count documents:</strong> <code>db.users.countDocuments()</code></li>
+      <li><strong>Sort documents:</strong> <code>db.users.find().sort({ age: 1 })</code></li>
+      <li><strong>Limit the number of results:</strong> <code>db.users.find().limit(5)</code></li>
+      <li><strong>Projection (only select certain fields):</strong> <code>db.users.find({}, { name: 1, age: 1 })</code>
+      </li>
+      <li><strong>Aggregation - Grouping data:</strong>
+        <code>db.users.aggregate([ { $group: { _id: "$age", count: { $sum: 1 } } } ])</code>
+      </li>
+      <li><strong>Find distinct values:</strong> <code>db.users.distinct("age")</code></li>
+      <li><strong>Check server status:</strong> <code>db.serverStatus()</code></li>
+      <li><strong>List all databases:</strong> <code>show dbs</code></li>
+      <li><strong>List all collections:</strong> <code>show collections</code></li>
+    </ul>
+
+    <!-- Section: Tailwind CSS Styling -->
+    <h2>10. Basic Tailwind CSS Styling</h2>
+    <p>Here's an example of how to center a container and apply a basic background color:</p>
+    <div class="project-structure">
+      <pre><code>class="flex items-center justify-center bg-blue-500 h-screen"</code></pre>
+    </div>
+
+    <!-- Tailwind CSS Class Examples -->
+    <h3>Tailwind CSS Class Examples</h3>
+    <ul>
+      <li><strong>Background color:</strong> <code>bg-blue-500</code></li>
+      <li><strong>Text color:</strong> <code>text-white</code></li>
+      <li><strong>Padding:</strong> <code>p-4</code></li>
+      <li><strong>Margin:</strong> <code>m-4</code></li>
+      <li><strong>Text size:</strong> <code>text-lg</code></li>
+      <li><strong>Text alignment:</strong> <code>text-center</code></li>
+      <li><strong>Flexbox container:</strong> <code>flex</code></li>
+      <li><strong>Flexbox direction:</strong> <code>flex-col</code></li>
+      <li><strong>Items alignment (vertical):</strong> <code>items-center</code></li>
+      <li><strong>Justify content (horizontal):</strong> <code>justify-center</code></li>
+      <li><strong>Background gradient:</strong> <code>bg-gradient-to-r from-blue-500 to-green-500</code></li>
+      <li><strong>Shadow:</strong> <code>shadow-lg</code></li>
+      <li><strong>Rounded corners:</strong> <code>rounded-lg</code></li>
+      <li><strong>Width:</strong> <code>w-1/2</code></li>
+      <li><strong>Height:</strong> <code>h-32</code></li>
+      <li><strong>Border:</strong> <code>border</code></li>
+      <li><strong>Opacity:</strong> <code>opacity-50</code></li>
+      <li><strong>Hover effect:</strong> <code>hover:bg-blue-700</code></li>
+      <li><strong>Transition effect:</strong> <code>transition duration-300</code></li>
+      <li><strong>Grid layout:</strong> <code>grid grid-cols-3 gap-4</code></li>
+      <li><strong>Display block:</strong> <code>block</code></li>
+      <li><strong>Disable text selection:</strong> <code>select-none</code></li>
+      <li><strong>Object-fit (image resizing):</strong> <code>object-cover</code></li>
+      <li><strong>Flex wrap:</strong> <code>flex-wrap</code></li>
+      <li><strong>Responsive classes (for different screen sizes):</strong>
+        <code>sm:text-sm md:text-base lg:text-lg</code>
+      </li>
+    </ul>
+
+    <!-- Section: Resources -->
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://expressjs.com" target="_blank">Express.js Documentation</a></li>
+      <li><a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas Documentation</a></li>
+      <li><a href="https://tailwindcss.com/docs" target="_blank">Tailwind CSS Documentation</a></li>
+    </ul>
+    <!-- Footer Section: Training By JRV Academy -->
+    <div style="text-align: center">
+      <p>Training By JRV Academy</p>
+    </div>
+
+  </div>
+
+  <!-- Download as PDF Button -->
+  <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
   </div>
 
   <script>
